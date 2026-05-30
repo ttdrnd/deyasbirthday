@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Для тебя</title>
+
 <style>
 body{
     margin:0;
@@ -51,28 +52,39 @@ iframe{
 }
 </style>
 </head>
+
 <body>
+
 <div class="container" id="login">
-    <h1>the song I associate you with</h1>
+    <h1>the song i associate you with</h1>
     <p>enter the password</p>
-<input type="password" id="password">
-<br>
-<button onclick="checkPassword()">open</button>
+
+    <input type="password" id="password">
+    <br>
+    <button onclick="checkPassword()">Open</button>
 </div>
+
 <div class="container" id="content">
-<audio controls autoplay loop>
-    <source src="iris.mp3" type="audio/mpeg">
-</audio>
 
-<br><br>
+    <audio id="music" loop>
+        <source src="iris.mp3" type="audio/mpeg">
+    </audio>
 
-<iframe src="letterr.pdf"></iframe>
+    <button onclick="document.getElementById('music').play()">
+        🎵 turn on the music
+    </button>
+
+    <br><br>
+
+    <iframe src="letterr.pdf"></iframe>
+
 </div>
+
 <script>
 function checkPassword() {
     const password = document.getElementById("password").value;
 
-    if(password === "iris"){
+    if(password === "IRIS"){
         document.getElementById("login").style.display = "none";
         document.getElementById("content").style.display = "block";
     } else {
@@ -80,5 +92,6 @@ function checkPassword() {
     }
 }
 </script>
+
 </body>
 </html>
